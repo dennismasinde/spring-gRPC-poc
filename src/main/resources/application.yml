@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: 'jdbc:mysql://localhost:3306/protodb'
+    username: root
+    password: 30581297mM/
+
+  jpa:
+    show-sql: true
+  hibernate:
+    ddl-auto: update
+  properties:
+    hibernate:
+      dialect: com.mysql.cj.jdbc.Driver
+
+  server:
+    port: '9191'
+
+  grpc:
+    port: '8080'
+    enableReflection: true
