@@ -14,9 +14,9 @@
 	<name>grpcscuffhold</name>
 	<description>Demo project for Spring Boot grpc scuffhold</description>
 	<properties>
-		<protobuf.version>3.19.1</protobuf.version>
+		<protobuf.version>3.22.3</protobuf.version>
 		<protobuf-plugin.version>0.6.1</protobuf-plugin.version>
-		<grpc.version>1.42.1</grpc.version>
+		<grpc.version>1.54.1</grpc.version>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
