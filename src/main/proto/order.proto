@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package io.maddennis.order;
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "io.maddennis.order";
+
+message OrderResponse {
+  int64 id = 1;
+  google.protobuf.Timestamp order_date = 2;
+  int32 reorder = 3;
+  int64 user_id = 4;
+}
+
+message IdOrderRequest {
+  int64 id = 1;
+}
+
+message UserOrdersRequest {
+  int64 user_id = 1;
+}
+
+service OrderService {
+  rpc fetchOrderById (IdOrderRequest) returns (OrderResponse) {}
+  rpc fetchUserOrdersById (UserOrdersRequest) returns (stream OrderResponse) {}
+}

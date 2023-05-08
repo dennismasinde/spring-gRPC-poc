@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package io.maddennis.item;
+
+option java_multiple_files = true;
+option java_package = "io.maddennis.item";
+
+message ItemResponse {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  int64 no_in_stock = 4;
+  string manufacturer = 5;
+  string image_url = 6;
+}
+
+message IdItemRequest {
+  int64 id = 1;
+}
+
+message NameItemRequest {
+  string name = 1;
+}
+
+message CategoryItemRequest {
+  string category = 1;
+}
+
+message UpdateItemByIdRequest {
+  int64 id = 1;
+}
+
+message UpdateItemByNameRequest {
+  string name = 1;
+}
+
+message CountItemInStockById {
+  int64 id = 1;
+}
+
+message UpdateResponse {
+  string message = 1;
+}
+
+message ItemInStockResponse {
+  int64 item_count = 1;
+}
+
+service ItemService {
+  rpc fetchItemById (IdItemRequest) returns (ItemResponse) {}
+  rpc fetchItemByName (NameItemRequest) returns (ItemResponse) {}
+  rpc fetchItemsByCategory (CategoryItemRequest) returns (stream ItemResponse) {}
+  rpc updateItemById (UpdateItemByIdRequest) returns (UpdateResponse) {}
+  rpc updateItemByName (UpdateItemByNameRequest) returns (UpdateResponse) {}
+  rpc countItemInStock (CountItemInStockById) returns (ItemInStockResponse) {}
+}

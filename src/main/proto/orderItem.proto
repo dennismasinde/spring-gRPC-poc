@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package io.maddennis.orderItem;
+
+option java_multiple_files = true;
+option java_package = "io.maddennis.orderItem";

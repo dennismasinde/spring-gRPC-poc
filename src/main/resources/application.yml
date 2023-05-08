@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: 'jdbc:mysql://localhost:3306/protodb'
     username: root
-    password: 30581297mM/
+    password: 35581277mM/
 
   jpa:
     show-sql: true
